@@ -27,6 +27,7 @@ DB_PASSWORD = sua senha do mysql
 DB_HOST = localhost
 DB_NAME = estoque
 DB_DIALECT = mysql
+SECRET = ms6a1sd646g41s1h1hjdrkçdbugafvgha56a4d16adfa
 ```
 Depois de inserir as informações de acordo com o seu banco de dados MYSQL, inicie o primeiro terminal na pasta backend e insira para iniciar o servidor:
 ```bash
