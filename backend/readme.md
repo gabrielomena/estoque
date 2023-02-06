@@ -27,6 +27,7 @@ DB_PASSWORD = sua senha do mysql
 DB_HOST = localhost
 DB_NAME = estoque
 DB_DIALECT = mysql
+SECRET = ms6a1sd646g41s1h1hjdrkçdbugafvgha56a4d16adfa
 ```
 Depois de inserir as informações de acordo com o seu banco de dados MYSQL, inicie o primeiro terminal na pasta backend e insira para iniciar o servidor:
 ```bash
@@ -42,8 +43,21 @@ npx sequelize-cli db:migrate
 ```
 Se for criado corretamente, seu banco de dados foi criado com as tabelas criadas.
 
+Com isso voce pode utilizar os endpoints para criacao de usuário e login:
+```
+# utilize o postman ou insomnia para testar os endpoints
 
-Com isso voce pode utilizar os endpoints para criacao de produtos:
+# para listar todos os produtos:
+http://localhost:3000/create
+
+# para localizar apenas um produto:
+http://localhost:3000/login
+
+
+
+```
+
+E também voce pode utilizar os endpoints para criacao de produtos:
 ```
 # utilize o postman ou insomnia para testar os endpoints
 
@@ -60,7 +74,7 @@ http://localhost:3000/cadastrar
 http://localhost:3000/atualizar/id
 
 # para deletar um produto:
-http://localhost:3000/ecluir/id
+http://localhost:3000/excluir/id
 
 ```
 
