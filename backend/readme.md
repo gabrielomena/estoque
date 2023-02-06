@@ -42,8 +42,21 @@ npx sequelize-cli db:migrate
 ```
 Se for criado corretamente, seu banco de dados foi criado com as tabelas criadas.
 
+Com isso voce pode utilizar os endpoints para criacao de usuário e login:
+```
+# utilize o postman ou insomnia para testar os endpoints
 
-Com isso voce pode utilizar os endpoints para criacao de produtos:
+# para listar todos os produtos:
+http://localhost:3000/create
+
+# para localizar apenas um produto:
+http://localhost:3000/login
+
+
+
+```
+
+E também voce pode utilizar os endpoints para criacao de produtos:
 ```
 # utilize o postman ou insomnia para testar os endpoints
 
@@ -60,7 +73,7 @@ http://localhost:3000/cadastrar
 http://localhost:3000/atualizar/id
 
 # para deletar um produto:
-http://localhost:3000/ecluir/id
+http://localhost:3000/excluir/id
 
 ```
 
