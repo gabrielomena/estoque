@@ -1,4 +1,4 @@
-Estoque
+Estoque - USAR SOMENTE AS FERRAMENTAS QUE APRENDEMOS NAS AULAS
 backend:
  - rota de login
  - middleware
