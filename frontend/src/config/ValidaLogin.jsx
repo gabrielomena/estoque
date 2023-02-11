@@ -9,7 +9,7 @@ const navigate=useNavigate()
     useEffect(()=>{
         if(!login){
             alert('vc nao tem permissão para acessar essa rota')
-            navigate('/')
+            navigate('/login')
         }
     })
     return(
