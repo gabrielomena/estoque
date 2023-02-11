@@ -9,19 +9,17 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { useContext, useState } from "react";
-import { TitleContext } from "../../context/TitleContext";
 import { Link, useNavigate } from "react-router-dom";
 import { Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
 
-const Navbar = () => {
-  const {title} = useContext(TitleContext)
+const NavbarComponent = () => {
   const navigate = useNavigate()
   const [menuAberto, setMenuAberto] = useState(false)
   const itensMenu = [
     {
       texto: 'Lista de Pessoas',
       icone: (<HomeIcon/>),
-      to: '/'
+      to: '/listar'
     },
     {
       texto: 'Cadastro Pessoa',
@@ -33,7 +31,7 @@ const Navbar = () => {
   const handleLogout = () => {
     localStorage.removeItem('token')
     localStorage.removeItem('logado')
-    navigate('/login')
+    navigate('/')
   }
 
   return (
@@ -42,7 +40,7 @@ const Navbar = () => {
         <Toolbar>
          <MenuIcon sx={{cursor: 'pointer', mr:3}} onClick={(e)=>setMenuAberto(true)} />
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            { title }
+
           </Typography>
           <Button color="inherit" onClick={handleLogout}>Sair</Button>
         </Toolbar>
@@ -71,4 +69,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavbarComponent;

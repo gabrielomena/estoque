@@ -1,7 +1,7 @@
 import { Button, Card, Divider, TextField, Typography } from "@mui/material"
 import { Box } from "@mui/system"
 import { useState } from "react";
-import { Api, api } from "../../config/Api";
+import { Api } from "../../config/Api";
 
 
 
@@ -32,7 +32,7 @@ export const Login =()=>{
     }
 
     const CadastrarUsuario =()=>{
-        pi.post('/login', {
+      Api.post('/login', {
             name: name,
             password: password
           })

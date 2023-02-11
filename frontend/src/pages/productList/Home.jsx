@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react"
 import BarraSuperior from "../../components/Navbar/NavbarComponent"
-import api from "../../services/Api"
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -11,30 +10,28 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import Paper from '@mui/material/Paper';
 import { Box, Container } from "@mui/system"
 import { Button } from "@mui/material"
+import { Api } from "../../config/Api";
+import { ValidaLogin } from "../../config/ValidaLogin";
+import NavbarComponent from "../../components/Navbar/NavbarComponent";
+
 
 const Home = () => {
-    const [pessoas, setPessoas] = useState([])
+    const [pessoas, setProdutos] = useState([])
+
 
     useEffect(() => {
-        setTitle('Listagem de Pessoas')
-    }, [setTitle])
-
-    useEffect(() => {
-        api.get('api/', {
-            headers: {
-                'Authorization': localStorage.getItem('token')
-            }
-        }).then(({ data }) => {
-            setPessoas(data.data)
+        Api.get('listar').then(({ data }) => {
+            setProdutos(data.data)
             console.log(data.data)
         })
-    }, [setPessoas])
+    }, [setProdutos])
 
 
     return (
-        <VerificaLogin>
-            <BarraSuperior />
-            <Container maxWidth="xl">
+    
+            <NavbarComponent>
+
+            
                 <Box sx={{ p: 3 }}>
                     <TableContainer component={Paper}>
                         <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -69,8 +66,8 @@ const Home = () => {
                         </Table>
                     </TableContainer>
                 </Box>
-            </Container>
-        </VerificaLogin>
+            
+            </NavbarComponent>
     )
 }
 
